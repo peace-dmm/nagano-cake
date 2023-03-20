@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many :order_details
   has_many :orders, through: :order_details
-  belongs_to :genre, optional: true#実装されたら外す
+  belongs_to :genre#, optional: true#実装されたら外す
 
   validates :genre_id, presence: true
   validates :name, presence: true
