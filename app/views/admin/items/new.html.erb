@@ -34,10 +34,10 @@
           <%= f.text_area :introduction, :placeholder => "ここに説明文を記入します", class: "form-control col-sm-3" %>
         </div>
 
-        <!--<div class="form-group row">-->
-          <%#= f.label "ジャンル", class: "col-form-label" %>
-          <%#= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択してください", class: "form-control" %>
-        <!--</div>-->
+        <div class="form-group row">
+          <%= f.label "ジャンル", class: "col-form-label" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択してください", class: "form-control" %>
+        </div>
 
         <div class="form-group row">
           <%= f.label "税抜価格", class: "col-form-label" %>

@@ -1,7 +1,7 @@
 <div class="container">
   <h2>ジャンル一覧・追加</h2>
 
-  <div>
+ <div>
     <%= form_with model: @genre_new, url:admin_genres_path do |f| %>
       <p>ジャンル名</p>
       <%= f.text_field :name %>
