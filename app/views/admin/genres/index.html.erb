@@ -1,15 +1,15 @@
 <div class="container">
   <h2>ジャンル一覧・追加</h2>
 
-  <div class="row">
-    <%= form_with model: @genre_new do |f| %>
+  <div>
+    <%= form_with model: @genre_new, url:admin_genres_path do |f| %>
       <p>ジャンル名</p>
       <%= f.text_field :name %>
       <%= f.submit "新規登録", class: "btn btn-primary" %>
     <% end %>
   </div>
 
-    <div class="row">
+    <div>
       <table class="table">
         <thead>
           <tr>
