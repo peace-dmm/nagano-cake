@@ -26,6 +26,8 @@ class Customer::DeliveryAddressesController < ApplicationController
     redirect_to delivery_addresses_path
   end
 
+
+
   private
   def delivery_address_params
     params.require(:delivery_address).permit(:name, :address, :postal_code)
