@@ -9,20 +9,11 @@ Admin.create!(
    email: 'admin@admin',
    password: 'testtest'
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/develop
+
 
 Genre.create!(
    name: "ケーキ",
    name: "プリン",
    name: "焼き菓子",
    name: "キャンディ"
-<<<<<<< HEAD
    )
->>>>>>> origin/develop
-=======
-   )
->>>>>>> origin/develop
