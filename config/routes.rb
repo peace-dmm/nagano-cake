@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   #devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-get 'admins' => 'admin/homes#top'
+ get 'admins' => 'admin/homes#top'
 
  root to: 'customer/homes#top'
  get 'customers/my_page/:id' => 'customer/customers#show'
