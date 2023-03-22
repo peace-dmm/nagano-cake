@@ -36,7 +36,6 @@ class Customer::OrdersController < ApplicationController
     order = Order.new
     order.save
     #@cart_items = current_customer.cart_items.all
-
     #@cart_items.each do |cart_item|
       #@order_details = OrderDetail.new
       #@order_details.order_id = order.id
@@ -46,7 +45,6 @@ class Customer::OrdersController < ApplicationController
       #@order_details.manufacture_status = 0
       #@order_details.save!
     #end
-
     #CartItem.destroy_all
     redirect_to orders_complete_path
     end
@@ -54,6 +52,7 @@ class Customer::OrdersController < ApplicationController
     #注文履歴画面
     def index
     @orders = Order.all
+    #@orders = current_customer.Order.all
     end
 
     #注文履歴詳細画面
