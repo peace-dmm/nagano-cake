@@ -51,6 +51,7 @@
     <div class="col-12">
       <div class="text-center">
         <%= link_to "編集する", edit_admin_item_path(@item), class: "btn btn-action mb-5 btn-success" %>
+        <%= link_to '削除する', admin_item_path, method: :delete, class: "btn btn-action mb-5 btn-danger", data: {confirm: "本当に削除しますか？"}%>
       </div>
     </div>
   </div>
