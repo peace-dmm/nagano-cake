@@ -1,11 +1,11 @@
 class Admin::CustomersController < ApplicationController
 
  def index
-  @customer=Admin.all
+ @customer=Admin.all
  end
 
  def show
-@customer=Admin.all
+ @customer=Admin.all
 
  end
 
@@ -16,6 +16,6 @@ class Admin::CustomersController < ApplicationController
 end
 private
 
-def book_params
+def customer_params
 params.require(:customer).permit(:last_name, :last_name_kana, :first_name, :first_name_kana, :postal_code, :address, :telephone_number, :email, :is_deleted)
 end
