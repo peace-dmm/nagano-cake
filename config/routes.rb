@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  root to: 'customer/homes#top'
+
   get 'items/index'
   get 'items/show'
+  get '/about' => 'customer/homes#about', as: "about"
 
   # 顧客用
   # URL /customers/sign_in ...
@@ -22,7 +25,6 @@ Rails.application.routes.draw do
 
   scope module: :customer do
     resources :delivery_addresses, only: [:index, :create, :edit, :update, :destroy]
-
       resources :items, only: [:index, :show]
       resources :cart_items, only: [:index, :update, :destroy, :create] do
       collection do
@@ -34,9 +36,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
- get 'admins' => 'admin/homes#top'
+ get '/admins' => 'admin/homes#top'
 
- root to: 'customer/homes#top'
  get 'customers/my_page/:id' => 'customer/customers#show'
  get 'customers/information/edit' => 'customer/customers#edit'
  get 'customers/information' => 'customer/customers#update'
