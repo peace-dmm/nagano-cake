@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class Customer::ItemsController < ApplicationController
   def index
     @genres = Genre.all
     if params[:genre_id]
