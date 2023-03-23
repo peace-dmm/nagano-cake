@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :edit, :update]
+    resources :customers, only:[:index, :show, :edit, :update, :destroy]
   end
 
   scope module: :customer do
@@ -27,4 +28,15 @@ Rails.application.routes.draw do
   end
   #devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
+ get 'admins' => 'admin/homes#top'
+
+ root to: 'customer/homes#top'
+ get 'customers/my_page/:id' => 'customer/customers#show'
+ get 'customers/information/edit' => 'customer/customers#edit'
+ get 'customers/information' => 'customer/customers#update'
+ get 'customers/quit' => 'customer/customers#quit'
+ get 'customers/out' => 'customer/customers#out'
+
 end
