@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2023_03_21_033949) do
   end
 
   create_table "delivery_addresses", force: :cascade do |t|
+    t.integer "customer_id"
     t.string "name", null: false
     t.string "address", null: false
     t.string "postal_code", null: false

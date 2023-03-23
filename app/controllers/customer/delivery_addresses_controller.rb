@@ -6,6 +6,7 @@ class Customer::DeliveryAddressesController < ApplicationController
 
   def create
     delivery_address_new = DeliveryAddress.new(delivery_address_params)
+    delivery_address_new.customer_id = current_customer.id
     delivery_address_new.save
     redirect_to delivery_addresses_path
   end

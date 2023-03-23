@@ -4,8 +4,10 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :admin
+
 #リレーション
   has_many :orders
+  has_many :delivery_addresses
 
 #注文時自分の住所入力用
   def address_display

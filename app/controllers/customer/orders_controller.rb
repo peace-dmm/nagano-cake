@@ -3,8 +3,8 @@ class Customer::OrdersController < ApplicationController
     #注文情報入力画面(支払方法・配送先の選択)
     def new
     @order = Order.new
-    @addresses = DeliveryAddress.all
-    #@addresses = current_customer.DeliveryAddress.all
+    #@addresses = DeliveryAddress.all
+    @addresses = current_customer.delivery_addresses.all
     end
 
     #注文情報確認画面

@@ -28,10 +28,11 @@ Rails.application.routes.draw do
     resources :delivery_addresses, only: [:index, :create, :edit, :update, :destroy]
     get 'orders/complete', to: 'orders#complete'
     post 'orders/confirm', to: 'orders#confirm'
-    resources :orders, only: 
-    collection do
-    delete "destroy_all" => "cart_items#destroy_all"
-    end
+    resources :orders
+
+    #collection do
+    #delete "destroy_all" => "cart_items#destroy_all"
+    #end
   end
   #devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
