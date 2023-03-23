@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-2">
       <h3 class="mb-3 mt-5">商品一覧</h3>
       <p>全<%= @items.count %>件</p>
     </div>
 
     <% @items.each do |item| %>
-      <div class="card ml-3 mb-5">
-        <%= link_to admin_item_path(item) do %>
+      <div class="card ml-2 mb-5">
+        <%= link_to item_path(item) do %>
           <%= image_tag item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
         <% end %>
         <% if item.is_active == true %><!--販売中か停止中か-->
@@ -23,5 +23,6 @@
         <% end %>
       </div>
     <% end %>
+      <%= paginate @items %>
   </div>
 </div>
