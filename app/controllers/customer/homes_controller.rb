@@ -2,7 +2,7 @@ class Customer::HomesController < ApplicationController
 
   def top
     @genres = Genre.all
-    @items = Items.limit(4).order("created_at DESC")
+    @items = Item.order('id DESC').limit(4)
   end
 
   def about

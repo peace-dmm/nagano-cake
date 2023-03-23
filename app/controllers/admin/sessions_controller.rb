@@ -25,10 +25,7 @@ class Admin::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
-<<<<<<< HEAD
-=======
   def after_sign_out_path_for(resource)
     new_admin_item_path
   end
->>>>>>> origin/develop
 end
