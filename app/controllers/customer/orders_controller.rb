@@ -58,6 +58,7 @@ class Customer::OrdersController < ApplicationController
     #注文履歴詳細画面
     def show
     @orders = Order.find(params[:id])
+    @details = OrderDetail.find(params[:id])
     end
 
   private

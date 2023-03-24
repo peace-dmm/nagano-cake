@@ -12,11 +12,10 @@
   </thead>
 
   <tbody>
-   <% @orders.each do |order| %>
-    <td><%= order.created_at %></td>
-    <td><%= order.name %></td>
-    <td><%= order_detail.amount %></td>
-   <% end %>
+   <% @orders.each do |t| %>
+    <td><%= t.created_at %></td>
+    <td><%= t.name %></td>
+    <td></td>
 </tbody>
 
 </table>
