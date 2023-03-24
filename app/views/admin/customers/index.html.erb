@@ -25,16 +25,21 @@
 <% end %>
 </td>
 <td><%= customer.email %></td>
-<td><%= customer.is_deleted %></td>
-
-
-
-</tr>
-
+<td><% if customer.is_deleted == true %>
+<p class="text-success">
+有効
+</p>
+<% else %>
+<p class="text-danger">
+退会
+</p>
 <% end %>
+</td>
+</tr>
+<% end %>
+<%= paginate @customer %>
 </tbody>
 </table>
-
 </div>
 </div>
 </div>
