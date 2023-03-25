@@ -9,7 +9,11 @@
       <h6>ジャンル検索</h6>
       <% @genres.each do |genre| %>
         <ul>
-          <li><%= genre.name %></li>
+          <li>
+            <%= link_to  do %>
+              <%= genre.name %>
+            <% end %>
+          </li>
         </ul>
       <% end %>
     </div>
@@ -31,7 +35,7 @@
       <% @items.each do |item| %>
       <div class="col-md-3">
         <div class="card">
-        <%= link_to admin_item_path(item) do %>
+        <%= link_to item_path(item) do %>
           <%= image_tag item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
         <% end %>
           <div class="card-body">
