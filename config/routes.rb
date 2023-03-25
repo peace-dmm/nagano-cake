@@ -41,7 +41,7 @@ Rails.application.routes.draw do
  get '/admins' => 'admin/homes#top'
 
 
- root to: 'customer/homes#top'
+
  get 'customers/my_page' => 'customer/customers#show',as: :customers_my_page
  get 'customers/information/edit' => 'customer/customers#edit',as: :customers_my_page_edit
  patch 'customers/information' => 'customer/customers#update'
