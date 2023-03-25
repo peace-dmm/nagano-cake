@@ -45,7 +45,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
  get '/admins' => 'admin/homes#top'
-
  get 'customers/my_page' => 'customer/customers#show',as: :customers_my_page
  get 'customers/information/edit' => 'customer/customers#edit',as: :customers_my_page_edit
  patch 'customers/information' => 'customer/customers#update'
