@@ -15,7 +15,7 @@ class Admin::ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all.page(params[:page]).per(10)
+    @items = Item.all.page(params[:page]).per(8)
   end
 
   def show
@@ -35,11 +35,16 @@ class Admin::ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to admin_items_path
+  end
 
   private
 
   def item_params
-    params.require(:item).permit(:item_image, :genre_id,:name, :introduction,:price, :is_active)
+    params.require(:item).permit(:item_image, :genre_id, :name, :introduction, :price, :is_active)
   end
 
 end
