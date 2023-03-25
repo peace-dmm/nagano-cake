@@ -13,7 +13,7 @@ class Admin::OrdersController < ApplicationController
     #注文ステータスの更新
     def update
     order = Order.find(params[:id])
-    order.update(status: order.status)
+    order.update(order_params)
     redirect_to admin_order_path(order)
     end
 

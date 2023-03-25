@@ -19,8 +19,6 @@ Rails.application.routes.draw do
 }
   get 'admin', to: 'admin/orders#index'
 
-
-
   namespace :admin do
     resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :edit, :update]
@@ -46,11 +44,7 @@ Rails.application.routes.draw do
   #devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-
  get '/admins' => 'admin/homes#top'
-
-
- root to: 'customer/homes#top'
  get 'customers/my_page' => 'customer/customers#show',as: :customers_my_page
  get 'customers/information/edit' => 'customer/customers#edit',as: :customers_my_page_edit
  patch 'customers/information' => 'customer/customers#update'
