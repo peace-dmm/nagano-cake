@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-md-2 text-right">
-      <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, remote: true, class: "btn btn-danger" %>
+      <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, class: "btn btn-danger" %>
     </div>
   </div>
 
@@ -23,7 +23,7 @@
           <% @cart_items.each do |cart_item| %>
             <tr>
               <td>
-                <%= image_tag cart_item.item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
+                <%= image_tag cart_item.item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "120x120" %>
               </td>
               <td colspan="2"><%= cart_item.item.name %></td>
               <td><%= cart_item.item.with_tax_price.to_s(:delimited) %></td>
@@ -35,7 +35,7 @@
                 <% end %>
               </td>
               <td><%= cart_item.subtotal.to_s(:delimited) %></td>
-              <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, remote: true, class: "btn btn-danger" %></td>
+              <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, class: "btn btn-danger" %></td>
             </tr>
           <% end %>
         </tbody>
@@ -45,7 +45,7 @@
 
   <div class="row">
     <div class="col-md-3 mt-3">
-      <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+      <%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %>
     </div>
 
     <div class="col-md-4 mt-3">
