@@ -1,7 +1,7 @@
 class Admin::HomesController < ApplicationController
 
-def top
-  
+def index
+    @customer=Customer.all
 end
 
 end
