@@ -1,14 +1,14 @@
 <div class="container">
 <div class="row">
-<div class="col-md-12 col-md-offset-1 mx-auto mt-3">
+<div class="col-md-8 col-md-offset-1 mx-auto mt-3">
 <h3>注文履歴詳細</h3>
 
 <!--テーブル1-->
 <table class="table">
   <tr><th>購入者</th><td><%= @orders.name %></td></tr>
-  <tr><th>注文日</th></th><td><%= @orders.created_at %></td></tr>
-  <tr><th>配送先</th><td><%= @orders.address %></td></tr>
-  <tr><th>支払方法</th><td><%= @orders.payment_method %></td></tr>
+  <tr><th>注文日</th></th><td><%= l @orders.created_at %></td></tr>
+  <tr><th>配送先</th><td><%= @orders.address_display %></td></tr>
+  <tr><th>支払方法</th><td><%= @orders.payment_method_i18n %></td></tr>
   <tr><th>注文ステータス</th>
   <td><%= form_with model: @orders, url: admin_order_path(@orders.id), method: :patch, local: true do |t| %>
       <%= t.select :status, Order.statuses.keys.map{|k|[I18n.t("enums.order.status.#{k}"),k]}, class: "status" %>
