@@ -2,9 +2,9 @@
 <div class="container px-5 px-sm-0">
   <div class="row justify-content-end">
     <div class="col-md-3">
-      <%#= render "genre", genres: @genres %>
       <h3 class="mt-5">商品一覧</h3>
       <p>全<%= @items.count %>件</p>
+      <%= render "genre", genres: @genres %>
     </div>
 
     <% @items.each do |item| %>
