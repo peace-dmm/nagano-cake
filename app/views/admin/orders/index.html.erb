@@ -9,6 +9,8 @@
     <th>購入日時</th>
     <th>購入者</th>
     <th>注文個数</th>
+    <th>ステータス</th>
+    <th>注文詳細</th>
   </thead>
 
   <tbody>
@@ -17,6 +19,8 @@
     <%= order.created_at %><%end%></td>
     <td><%= order.name %></td>
     <td><%= order.order_details.sum(:amount) %></td>
+    <td><%= order.status%></td>
+    <td><%= link_to "注文詳細", admin_order_path(order.id), class: "btn btn-success"%></td>
 </tbody>
 <% end %>
 </table>

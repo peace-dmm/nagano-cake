@@ -26,7 +26,7 @@
     <%end%>
     </td>
     <td><%= order.total_payment %></td>
-    <td><%= order.status %></td>
+    <td><%= order.status.contributor_i18n %></td>
     <td><%= link_to "注文詳細", order_path(order.id), class: "btn btn-success"%></td>
    <% end %>
    </tr>
