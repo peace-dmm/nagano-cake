@@ -52,7 +52,7 @@ class Customer::OrdersController < ApplicationController
 
     #注文履歴画面
     def index
-    @orders = current_customer.orders.all
+    @orders = current_customer.orders.all.page(params[:page]).per(10)
     end
 
     #注文履歴詳細画面

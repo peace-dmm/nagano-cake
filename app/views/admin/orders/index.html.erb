@@ -12,12 +12,13 @@
   </thead>
 
   <tbody>
-   <% @orders.each do |t| %>
-    <td><%= t.created_at %></td>
-    <td><%= t.name %></td>
-    <td></td>
+   <% @orders.each do |order| %>
+    <td><%= link_to admin_order_path(order.id) do %>
+    <%= order.created_at %><%end%></td>
+    <td><%= order.name %></td>
+    <td><%= order.order_details.amount%></td>
 </tbody>
-
+<% end %>
 </table>
 </div>
 </div>
