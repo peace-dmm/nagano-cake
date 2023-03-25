@@ -6,6 +6,6 @@ class Customer::HomesController < ApplicationController
   end
 
   def about
-    @genre = Genre.find(params[:id])
+
   end
 end
