@@ -37,6 +37,7 @@ class Customer::CartItemsController < ApplicationController
 
     @cart_items = current_customer.cart_items.all
     @total = @cart_items.inject(0){|sum, item| sum + item.subtotal}
+    redirect_to cart_items_path
   end
 
   def destroy_all
@@ -44,6 +45,7 @@ class Customer::CartItemsController < ApplicationController
 
     @cart_items = current_customer.cart_items.all
     @total = @cart_items.inject(0){|sum, items| sum + item.subtotal}
+    redirect_to cart_items_path
   end
 
   private

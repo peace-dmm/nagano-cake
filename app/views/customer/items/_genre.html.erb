@@ -1,0 +1,4 @@
+    <div class="active text-center">ジャンル検索</div>
+    <div><% genres.each do |genre| %>
+        <%= link_to genre.name, search_products_path(genre_name: "#{genre.name}"), method: :post, :style=>"color:black" %>
+    <% end %></div>
