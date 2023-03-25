@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-md-2 text-right">
-      <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, remote: true, class: "btn btn-danger" %>
+      <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, class: "btn btn-danger" %>
     </div>
   </div>
 
@@ -23,19 +23,19 @@
           <% @cart_items.each do |cart_item| %>
             <tr>
               <td>
-                <%= image_tag cart_item.item.image, format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
+                <%= image_tag cart_item.item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "120x120" %>
               </td>
               <td colspan="2"><%= cart_item.item.name %></td>
               <td><%= cart_item.item.with_tax_price.to_s(:delimited) %></td>
               <td>
-                <%= form_with model: cart_item, remote: true do |f| %>
+                <%= form_with model: cart_item do |f| %>
                   <%= f.hidden_field :item_id, value: cart_item.item.id %>
                   <%= f.select :amount, *[1..10], selected: cart_item.amount %>
                   <%= f.submit "変更", class: "btn btn-success" %>
                 <% end %>
               </td>
               <td><%= cart_item.subtotal.to_s(:delimited) %></td>
-              <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, remote: true, class: "btn btn-danger" %></td>
+              <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, class: "btn btn-danger" %></td>
             </tr>
           <% end %>
         </tbody>
@@ -45,7 +45,7 @@
 
   <div class="row">
     <div class="col-md-3 mt-3">
-      <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+      <%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %>
     </div>
 
     <div class="col-md-4 mt-3">
@@ -60,7 +60,7 @@
 
   <div class="row">
     <div class="col-md-3 mx-auto mt-5">
-      <<%= link_to "情報入力に進む",  new_order_path, class: "btn btn-success" %>
+      <%#= link_to "情報入力に進む",  new_order_path, class: "btn btn-success" %>
     </div>
   </div>
 

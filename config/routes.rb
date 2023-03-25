@@ -27,11 +27,15 @@ Rails.application.routes.draw do
     get 'orders/complete', to: 'orders#complete'
     post 'orders/confirm', to: 'orders#confirm'
     resources :orders
-
-    #collection do
-    #delete "destroy_all" => "cart_items#destroy_all"
-    #end
+    resources :items, only: [:index, :show]
+    resources :cart_items, only: [:index, :update, :destroy, :create] do
+    collection do
+    delete "destroy_all" => "cart_items#destroy_all"
+    end
+    end
+    post 'search'
   end
+
   #devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
