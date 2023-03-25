@@ -1,5 +1,7 @@
     <div class="card mt-5 active text-left">ジャンル検索
-    <div calss => <% genres.each do |genre| %>
+      <div calss="">
+      <% genres.each do |genre| %>
         <%= link_to genre.name, search_path(genre_name: "#{genre.name}"), method: :post, :style=>"color:black" %>
-    <% end %></div>
+      <% end %>
+      </div>
     </div>
