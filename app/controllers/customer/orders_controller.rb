@@ -8,6 +8,7 @@ class Customer::OrdersController < ApplicationController
 
     #注文情報確認画面
     def confirm
+    @total = 0
     @order = Order.new(order_params)
     if params[:order][:select_address] == "0"
       @order.postal_code = current_customer.postal_code
