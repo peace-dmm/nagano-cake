@@ -39,9 +39,9 @@
   <tbody>
    <tr>
    <td><%= t.item.name %></td>
-   <td><%= t.item.price %></td>
+   <td><%= t.item.with_tax_price %></td>
    <td><%= t.amount %></td>
-   <td><%= t.price * t.amount%></td>
+   <td><%= t.item.with_tax_price * t.amount%></td>
    </tr>
   </tbody>
   <%end%>
