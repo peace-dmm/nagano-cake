@@ -16,14 +16,13 @@
         <th>小計</th>
       </thead>
       <tbody>
-      <% @sum = 0 %>
       <% @cart_items.each do |cart_item| %>
       <tr>
         <td><%= image_tag cart_item.item.item_image, size: "30x30"%></td>
         <td><%= cart_item.item.name %></td>
         <td><%= cart_item.item.with_tax_price %></td>
         <td><%= cart_item.amount %></td>
-        <td><% @sum += cart_item.subtotal %><%= @sum %></td>
+        <td><%= cart_item.item.with_tax_price * cart_item.amount%></td>
       </tr>
       <% end %>
       </tbody>
@@ -35,17 +34,20 @@
 <div class="row">
   <div class="col-md-5 mx-auto">
     <table class="table">
+      <% @cart_items.each do |cart_item| %>
+      <% @total += cart_item.item.with_tax_price * cart_item.amount %>
+      <%end%>
       <tr>
         <th>送料</th>
         <td>800</td>
       </tr>
       <tr>
         <th>商品合計</th>
-        <td><%= @sum %></td>
+        <td><%= @total %></td>
       </tr>
       <tr>
         <th>請求金額</th>
-        <td><%= @sum + 800 %></td>
+        <td><%= @total + 800 %></td>
       </tr>
     </table>
   </div>
@@ -73,7 +75,7 @@
   <p><%= f.hidden_field :payment_method, value:  @order.payment_method %></p>
   <p><%= f.hidden_field :postage, value: 800 %></p>
   <p><%= f.hidden_field :postal_code, value: @order.postal_code %></p>
-  <p><%= f.hidden_field :total_payment, value: @sum + 800%></p>
+  <p><%= f.hidden_field :total_payment, value: @total + 800%></p>
   <p><%= f.hidden_field :address, value: @order.address%></p>
   <p><%= f.hidden_field :name, value: @order.name %></p>
   <p><%= f.hidden_field :order_status, value: "wait_payment"%></p>
