@@ -1,6 +1,6 @@
 class Customer::DeliveryAddressesController < ApplicationController
   def index
-    @delivery_addresses = DeliveryAddress.all
+    @delivery_addresses = current_customer.delivery_addresses.all
     @delivery_address_new = DeliveryAddress.new
   end
 
