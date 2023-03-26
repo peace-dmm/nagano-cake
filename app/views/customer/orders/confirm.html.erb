@@ -1,64 +1,55 @@
 <div class="container">
 <div class="row">
 <div class="col-md-12 mx-auto">
-
+</br>
 <h3>注文情報確認</h3>
 
 <!--カート内のアイテムを参照する-->
-<div class="container">
 <div class="row">
-<div class="col-md-12 mx-auto">
-<table class="table">
-    <thead>
-    <th></th>
-    <th>商品名</th>
-    <th>単価(税込)</th>
-    <th>数量</th>
-    <th>小計</th>
-    </thead>
-    <tbody>
-    <% @sum = 0 %>
-    <% @cart_items.each do |cart_item| %>
-    <tr>
-    <td><%= image_tag cart_item.item.item_image, size: "30x30"%></td>
-    <td><%= cart_item.item.name %></td>
-    <td><%= cart_item.item.with_tax_price %></td>
-    <td><%= cart_item.amount %></td>
-    <td><% @sum += cart_item.subtotal %><%= @sum %></td>
-    </tr>
-    <% end %>
-    
-    </tbody>
-</table>
-</div>
-</div>
-</div>
-
-<!--金額の表示-->
-<div class="container">
-<div class="row">
-<div class="col-md-6 mx-auto">
-<table class="table">
-    <tr>
-    <th>送料</th>
-    <td>800</td>
-    </tr>
-    <tr>
-    <th>商品合計</th>
-    <td><%= @sum %></td>
-    </tr>
-    <tr>
-    <th>請求金額</th>
-    <td><%= @sum + 800 %></td>
-    </tr>
-</table>
-</div>
-</div>
+  <div class="col-md-10 mx-auto">
+    <table class="table">
+      <thead>
+        <th></th>
+        <th>商品名</th>
+        <th>単価(税込)</th>
+        <th>数量</th>
+        <th>小計</th>
+      </thead>
+      <tbody>
+      <% @sum = 0 %>
+      <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td><%= image_tag cart_item.item.item_image, size: "30x30"%></td>
+        <td><%= cart_item.item.name %></td>
+        <td><%= cart_item.item.with_tax_price %></td>
+        <td><%= cart_item.amount %></td>
+        <td><% @sum += cart_item.subtotal %><%= @sum %></td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <!--お客様情報の表示-->
-<div class="container">
 <div class="row">
+  <div class="col-md-5 mx-auto">
+    <table class="table">
+      <tr>
+        <th>送料</th>
+        <td>800</td>
+      </tr>
+      <tr>
+        <th>商品合計</th>
+        <td><%= @sum %></td>
+      </tr>
+      <tr>
+        <th>請求金額</th>
+        <td><%= @sum + 800 %></td>
+      </tr>
+    </table>
+  </div>
+
 <div class="col-md-6 mx-auto">
 <table class="table">
     <tr>
@@ -73,7 +64,6 @@
     </td>
     </tr>
 </table>
-</div>
 </div>
 </div>
 
