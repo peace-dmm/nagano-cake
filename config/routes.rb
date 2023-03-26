@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
-  get 'admin', to: 'admin/orders#index'
 
   namespace :admin do
     resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy]
