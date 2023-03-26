@@ -1,4 +1,7 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
   enums:
     order:
       payment_method:
@@ -10,7 +13,6 @@ ja:
         in_production: "製作中"
         preparing_delivery: "発送準備中"
         delivered: "発送済み"
-
     order_detail:
       making_status:
         production_not_possible: "製作不可"

@@ -4,7 +4,6 @@
 <h3>注文履歴一覧</h3>
 
 <table class="table">
-
   <thead>
     <tr>
     <th>注文日</th>
@@ -19,14 +18,14 @@
   <tbody>
    <% @orders.each do |order| %>
    </tr>
-    <td><%= order.created_at %></td>
-    <td><%= order.address %></td>
+    <td><%= l order.created_at %></td>
+    <td><%= order.address_display %></td>
     <td><% order.order_details.each do |detail|%>
     <%= detail.item.name %>
     <%end%>
     </td>
-    <td><%= order.total_payment %></td>
-    <td><%= order.status %></td>
+    <td><%= order.total_payment%></td>
+    <td><%= order.status_i18n %></td>
     <td><%= link_to "注文詳細", order_path(order.id), class: "btn btn-success"%></td>
    <% end %>
    </tr>
