@@ -15,7 +15,7 @@ class Customer < ApplicationRecord
 
 #注文時自分の住所入力用
   def address_display
-  '〒' + postal_code + ' ' + address + ' ' + last_name + ' ' + first_name
+  '〒' + postal_code + ' ' + address + ' ' + first_name + ' ' + last_name
   end
 
 end
