@@ -20,7 +20,7 @@
         </thead>
         <tbody>
           <% @cart_items.each do |cart_item| %>
-            <tr>
+            <tr><td></td>
               <td>
                 <%= image_tag cart_item.item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "170x120" %>
               </td>
