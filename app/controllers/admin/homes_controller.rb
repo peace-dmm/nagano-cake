@@ -1,7 +1,7 @@
 class Admin::HomesController < ApplicationController
 
-def index
-    @customer=Customer.all
+def top
+  @orders = Order.all.page(params[:page]).per(10)
 end
 
 end

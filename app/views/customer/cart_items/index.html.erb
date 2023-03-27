@@ -1,10 +1,10 @@
 <% if @cart_items.present? %>
   <div class="row">
     <div class="col-md-8 mt-5">
-      <h4 class="col-md-6">ショッピングカート</h4>
+      <h4 class="col-md-8">ショッピングカート</h4>
     </div>
 
-    <div class="col-md-2 text-right">
+    <div class="col-md-4 mt-5 text-center">
       <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, class: "btn btn-danger" %>
     </div>
   </div>
@@ -17,13 +17,12 @@
           <th>単価(税込)<th>
           <th>数量</th>
           <th>小計</th>
-          <th></th>
         </thead>
         <tbody>
           <% @cart_items.each do |cart_item| %>
             <tr>
               <td>
-                <%= image_tag cart_item.item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "120x120" %>
+                <%= image_tag cart_item.item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "170x120" %>
               </td>
               <td colspan="2"><%= cart_item.item.name %></td>
               <td><%= cart_item.item.with_tax_price.to_s(:delimited) %></td>
@@ -45,7 +44,7 @@
 
   <div class="row">
     <div class="col-md-3 mt-3">
-      <%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %>
+      <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
     </div>
 
     <div class="col-md-4 mt-3">
@@ -60,7 +59,7 @@
 
   <div class="row">
     <div class="col-md-3 mx-auto mt-5">
-      <%= link_to "情報入力に進む", class: "btn btn-success" %><!--path入力-->
+      <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success" %><!--path入力-->
     </div>
   </div>
 

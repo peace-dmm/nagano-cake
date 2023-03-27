@@ -1,0 +1,52 @@
+<div class="container">
+<div class="row">
+<div class="col-md-12 col-md-offset-1 mx-auto mt-3">
+
+<h3>注文履歴詳細</h3>
+<!--テーブル1-->
+<div class="row">
+  <div class="col-7 mx-auto">
+    <tr>注文情報</tr>
+      <table class="table">
+       <tr><th>注文日</th><td><%= l @orders.created_at %></td></tr>
+        <tr><th>配送先</th></th><td><%= @orders.address_display %></td></tr>
+        <tr><th>支払方法</th><td><%= @orders.payment_method_i18n %></td></tr>
+        <tr><th>ステータス</th><td><%= @orders.status_i18n %></td></tr>
+      </table>
+  </div>
+  <div class="col-5 mx-auto">
+    <tr>請求情報</tr>
+      <table class="table">
+        <tr><th>商品合計</th><td><%= @orders.total_payment - @orders.shipping_cost%></td></tr>
+        <tr><th>配送料</th><td><%= @orders.shipping_cost %></td></tr>
+        <tr><th>ご請求額</th><td><%= @orders.total_payment %></td></tr>
+      </table>
+  </div>
+</div>
+
+<!--テーブル3-->
+<table class="table">
+<tr>注文内容</tr>
+  <thead>
+   <tr>
+   <th>商品</th>
+   <th>単価(税込)</th>
+   <th>個数</th>
+   <th>小計</th>
+   </tr>
+  </thead>
+  <% @orders.order_details.each do |t| %>
+  <tbody>
+   <tr>
+   <td><%= t.item.name %></td>
+   <td><%= t.item.with_tax_price %></td>
+   <td><%= t.amount %></td>
+   <td><%= t.item.with_tax_price * t.amount%></td>
+   </tr>
+  </tbody>
+  <%end%>
+</table>
+
+</div>
+</div>
+</div>

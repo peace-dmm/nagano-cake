@@ -5,49 +5,36 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3">
-      <h6>ジャンル検索</h6>
-      <% @genres.each do |genre| %>
-        <ul>
-          <li>
-            <%= link_to  do %>
-              <%= genre.name %>
-            <% end %>
-          </li>
-        </ul>
-      <% end %>
+    <div class="col py-2 text-center">
+    <span>
+      <h4>ようこそ、ながのCAKEへ！</h4></br>
+      このサイトは、ケーキ販売のECサイトになります。</br>
+      会員でない方も商品の閲覧はできますが、</br>
+      購入には会員登録が必要になります。
+    </span>
     </div>
-
-
-    <div class="col-md-9 text-center">
-      <p>
-        <h4>ようこそ、ながのCAKEへ！</h4>
-        </br>
-        このサイトは、ケーキ販売のECサイトになります。</br>
-        会員でない方も商品の閲覧はできますが、</br>
-        購入には会員登録が必要になります。
-      </p>
-    </div>
-
-    <div class="col-md-9 offset-md-3">
-      <h4 class="py-2">新着商品</h4>
-      <div class="row">
-      <% @items.each do |item| %>
-      <div class="col-md-3">
-        <div class="card">
-        <%= link_to item_path(item) do %>
-          <%= image_tag item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
-        <% end %>
-          <div class="card-body">
-            <h6 class="card-title"><%= item.name %></h6>
-            <p class="card-text">￥<%= item.with_tax_price.to_s(:delimited) %></p>
+  </div>
+    <div class="row">
+      <div class="col">
+        <h4 class="py-2">新着商品</h4>
+        <div class="row">
+        <% @items.each do |item| %>
+        <div class="col-md-3">
+          <div class="card">
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "255x220" %>
+          <% end %>
+            <div class="card-body">
+              <h6 class="card-title"><%= item.name %></h6>
+              <p class="card-text">￥<%= item.with_tax_price.to_s(:delimited) %></p>
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
-      <a href = "/items" class="text-right">全ての商品を見る></a>
+      <div class="text-right py-2">
+        <a href = "/items">全ての商品を見る></a>
       </div>
     </div>
-
-  </div>
+    </div>
 </div>

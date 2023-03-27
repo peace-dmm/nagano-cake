@@ -1,11 +1,12 @@
 class Customer::DeliveryAddressesController < ApplicationController
   def index
-    @delivery_addresses = DeliveryAddress.all
+    @delivery_addresses = current_customer.delivery_addresses.all
     @delivery_address_new = DeliveryAddress.new
   end
 
   def create
     delivery_address_new = DeliveryAddress.new(delivery_address_params)
+    delivery_address_new.customer_id = current_customer.id
     delivery_address_new.save
     redirect_to delivery_addresses_path
   end
@@ -25,6 +26,8 @@ class Customer::DeliveryAddressesController < ApplicationController
     delivery_address.destroy
     redirect_to delivery_addresses_path
   end
+
+
 
   private
   def delivery_address_params
