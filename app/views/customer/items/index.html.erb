@@ -10,7 +10,7 @@
     <% @items.each do |item| %>
       <div class="card mb-1">
         <%= link_to item_path(item) do %>
-          <%= image_tag item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "200x200" %>
+          <%= image_tag item.item_image, format: 'jpeg', fallback: "no_image.jpg", size: "290x200" %>
         <% end %>
         <% if item.is_active == true %><!--販売中か停止中か-->
           <div class="card-body">
