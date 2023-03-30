@@ -28,9 +28,9 @@ Rails.application.routes.draw do
 
   scope module: :customer do
     resources :delivery_addresses, only: [:index, :create, :edit, :update, :destroy]
-    get 'orders/complete', to: 'orders#complete'
-    post 'orders/confirm', to: 'orders#confirm'
     resources :orders
+    get 'orders/complete' => 'orders#complete'
+    post 'orders/confirm' => 'orders#confirm'
     resources :items, only: [:index, :show]
     resources :cart_items, only: [:index, :update, :destroy, :create] do
     collection do

@@ -26,7 +26,6 @@ class Customer::OrdersController < ApplicationController
       @order_new = Order.new
       render :confirm
     end
-
     #注文完了画面
     def complete
     end
